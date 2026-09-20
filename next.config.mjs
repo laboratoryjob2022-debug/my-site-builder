@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Настройка экспорта для GitHub Pages
+  output: 'export',
+
   // Performance optimizations
   env: {
     NEXT_TELEMETRY_DISABLED: "1",
@@ -62,7 +65,8 @@ const nextConfig = {
     return config;
   },
   images: {
-    // Disable remote patterns
+    // Disable remote patterns & enable unoptimized for static export
+    unoptimized: true,
     remotePatterns: [],
   },
 };
